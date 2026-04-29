@@ -798,7 +798,7 @@ import Layout from '../layouts/Layout.astro'
               <div class="flex border-b border-rule w-full bg-surface-raised">
                 <button data-runner="npx" class="runner-tab runner-tab-active flex-1 text-[12px] font-medium py-2 border-b-2 transition-colors">npx</button>
                 <button data-runner="bunx" class="runner-tab flex-1 text-[12px] font-medium py-2 border-b-2 border-transparent text-ink-faint hover:text-ink transition-colors">bunx</button>
-                <button data-runner="pnpx" class="runner-tab flex-1 text-[12px] font-medium py-2 border-b-2 border-transparent text-ink-faint hover:text-ink transition-colors">pnpx</button>
+                <button data-runner="pnpm" class="runner-tab flex-1 text-[12px] font-medium py-2 border-b-2 border-transparent text-ink-faint hover:text-ink transition-colors">pnpm dlx</button>
               </div>
             </div>
             <div class="relative bg-surface-raised border border-t-0 border-rule rounded-b-lg px-5 py-3 font-mono text-[14px]">
@@ -850,11 +850,11 @@ import Layout from '../layouts/Layout.astro'
       initial.classList.add('text-teal', 'border-teal');
     }
 
-    // Runner tabs (npx/bunx/pnpx)
+    // Runner tabs (npx/bunx/pnpm dlx)
     const runnerCmds: Record<string, string> = {
       npx: 'npx add-mcp "executor mcp" --name "executor"',
       bunx: 'bunx add-mcp "executor mcp" --name "executor"',
-      pnpx: 'pnpx add-mcp "executor mcp" --name "executor"',
+      pnpm: 'pnpm dlx add-mcp "executor mcp" --name "executor"',
     };
     const runnerTabs = document.querySelectorAll<HTMLButtonElement>('.runner-tab');
     const runnerCmdText = document.querySelector('.runner-cmd-text');
